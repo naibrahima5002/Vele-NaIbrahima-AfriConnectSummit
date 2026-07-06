@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfriConnect Summit 2026 | Intervenants</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <nav class="navbar" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+        <span>AfriConnect</span> 2026
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="programme.html" class="nav-link">Programme</a></li>
+        <li class="nav-item"><a href="intervenants.html" class="nav-link active">Intervenants</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+          <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+        </button>
+        <button id="menu-hamburger" class="menu-hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fa-solid fa-bars" id="hamburger-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Interne -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Nos Intervenants</h1>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Intervenants</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Section Filtrage et Grille d'intervenants -->
+    <section class="speakers-list-section">
+      <div class="container">
+        
+        <!-- Boutons de filtrage dynamique (Gestion JS) -->
+        <div class="filter-controls" role="group" aria-label="Filtrer les intervenants par thématique">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="ia-tech">IA & Tech</button>
+          <button class="filter-btn" data-filter="business">Business</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+          <button class="filter-btn" data-filter="data">Data</button>
+        </div>
+
+        <!-- Grille CSS des 9 intervenants -->
+        <div class="speakers-grid-main" id="speakers-gallery">
+          
+          <!-- Intervenant 1 (IA & Tech) -->
+          <article class="speaker-card reveal" data-category="ia-tech">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Photo de Aminata Diallo" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Aminata Diallo</h3>
+              <p class="speaker-role">Lead AI Researcher</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sénégal</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 2 (Business) -->
+          <article class="speaker-card reveal" data-category="business">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400" alt="Photo de Kwame Osei" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Kwame Osei</h3>
+              <p class="speaker-role">Fondateur & CEO @ FinTech Hub</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ghana</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 3 (Data) -->
+          <article class="speaker-card reveal" data-category="data">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400" alt="Photo de Sarah Mensah" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Sarah Mensah</h3>
+              <p class="speaker-role">Cloud Architect & Data Engineer</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Côte d'Ivoire</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 4 (IA & Tech) -->
+          <article class="speaker-card reveal" data-category="ia-tech">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Photo de Samuel Bekele" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Samuel Bekele</h3>
+              <p class="speaker-role">Senior FullStack Engineer</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Éthiopie</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 5 (Design) -->
+          <article class="speaker-card reveal" data-category="design">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400" alt="Photo de Nadia Mansour" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Nadia Mansour</h3>
+              <p class="speaker-role">Directrice UX/UI</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Maroc</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 6 (Business) -->
+          <article class="speaker-card reveal" data-category="business">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Photo de Jean-Paul Kayishema" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Jean-Paul Kayishema</h3>
+              <p class="speaker-role">Managing Partner @ Africa Ventures</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Rwanda</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 7 (Data) -->
+          <article class="speaker-card reveal" data-category="data">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400" alt="Photo de Oluwaseun Adeyemi" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Oluwaseun Adeyemi</h3>
+              <p class="speaker-role">Cybersecurity Analyst</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nigéria</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 8 (Design) -->
+          <article class="speaker-card reveal" data-category="design">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?w=400" alt="Photo de Fanta Kéita" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Fanta Kéita</h3>
+              <p class="speaker-role">Product Designer Senior</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mali</span>
+            </div>
+          </article>
+
+          <!-- Intervenant 9 (IA & Tech) -->
+          <article class="speaker-card reveal" data-category="ia-tech">
+            <div class="speaker-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400" alt="Photo de Tariq Al-Fayed" class="speaker-img" loading="lazy">
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Tariq Al-Fayed</h3>
+              <p class="speaker-role">Ingénieur Blockchain</p>
+              <span class="speaker-country"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Égypte</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> AfriConnect</a>
+          <p class="footer-desc">Le sommet annuel de référence pour l'écosystème numérique africain.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Inscription & Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Suivez-nous</h4>
+          <div class="social-links">
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> AfriConnect Summit. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton Retour en haut -->
+  <button id="back-to-top" class="back-to-top" aria-label="Retourner en haut">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

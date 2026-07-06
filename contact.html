@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfriConnect Summit 2026 | Inscription & Contact</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <nav class="navbar" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+        <span>AfriConnect</span> 2026
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="programme.html" class="nav-link">Programme</a></li>
+        <li class="nav-item"><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+          <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+        </button>
+        <button id="menu-hamburger" class="menu-hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fa-solid fa-bars" id="hamburger-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Interne -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Inscription & Contact</h1>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Section Formulaire et Infos (Flexbox) -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          
+          <!-- Formulaire d'inscription (Gauche) -->
+          <div class="contact-form-container">
+            <h2 class="section-title text-left">Réservez votre place</h2>
+            <p class="form-intro">Remplissez le formulaire ci-dessous pour participer au sommet AfriConnect 2026.</p>
+
+            <!-- Box message de succès (masquée par défaut, gérée en JS) -->
+            <div id="form-success-msg" class="alert-success" style="display: none;" role="alert">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              <div>
+                <strong>Inscription validée !</strong>
+                <p>Un e-mail de confirmation vous a été envoyé avec vos accès au sommet.</p>
+              </div>
+            </div>
+
+            <form id="registration-form" class="contact-form" novalidate>
+              <!-- Nom complet -->
+              <div class="form-group">
+                <label for="fullname">Nom complet <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullname" placeholder="Ex: Awa Diop" required>
+                <span class="error-msg" id="error-fullname"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Adresse E-mail <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Ex: awa.diop@example.com" required>
+                <span class="error-msg" id="error-email"></span>
+              </div>
+
+              <!-- Téléphone -->
+              <div class="form-group">
+                <label for="phone">Numéro de téléphone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Ex: +221 77 123 45 67" required>
+                <span class="error-msg" id="error-phone"></span>
+              </div>
+
+              <!-- Type de participation -->
+              <div class="form-group">
+                <label for="pass-type">Type de participation <span class="required">*</span></label>
+                <select id="pass-type" name="pass-type" required>
+                  <option value="" disabled selected>-- Sélectionnez une option --</option>
+                  <option value="pass-standard">Pass Standard (3 Jours)</option>
+                  <option value="pass-vip">Pass VIP & Networking</option>
+                  <option value="pass-etudiant">Pass Étudiant / Chercheur</option>
+                  <option value="pass-presse">Pass Presse & Média</option>
+                </select>
+                <span class="error-msg" id="error-pass-type"></span>
+              </div>
+
+              <!-- Pays africain (12 options) -->
+              <div class="form-group">
+                <label for="country">Pays d'origine ou de résidence <span class="required">*</span></label>
+                <select id="country" name="country" required>
+                  <option value="" disabled selected>-- Sélectionnez un pays --</option>
+                  <option value="SN">Sénégal</option>
+                  <option value="CI">Côte d'Ivoire</option>
+                  <option value="GH">Ghana</option>
+                  <option value="NG">Nigéria</option>
+                  <option value="MA">Maroc</option>
+                  <option value="KE">Kenya</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="CMR">Cameroun</option>
+                  <option value="MALI">Mali</option>
+                  <option value="BEN">Bénin</option>
+                  <option value="EGY">Égypte</option>
+                  <option value="ZAF">Afrique du Sud</option>
+                </select>
+                <span class="error-msg" id="error-country"></span>
+              </div>
+
+              <!-- Message / Motivation -->
+              <div class="form-group">
+                <label for="message">Message ou motivations <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement vos attentes ou projets (min. 20 caractères)..." required></textarea>
+                <span class="error-msg" id="error-message"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Valider mon inscription</span>
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Colonne Informations pratiques (Droite) -->
+          <div class="contact-info-container">
+            <h2 class="section-title text-left">Informations Pratiques</h2>
+            <p class="info-intro">Une question spécifique ? Contactez directement l'équipe d'organisation.</p>
+
+            <div class="info-cards-list">
+              <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div class="info-content">
+                  <h3>Lieu de la Conférence</h3>
+                  <p>Centre International de Conférences Abdou Diouf (CICAD)<br>Dakar, Sénégal</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <div class="info-content">
+                  <h3>Contact E-mail</h3>
+                  <p><a href="mailto:contact@africonnect2026.com">contact@africonnect2026.com</a></p>
+                  <p><a href="mailto:press@africonnect2026.com">press@africonnect2026.com</a></p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                <div class="info-content">
+                  <h3>Assistance Téléphonique</h3>
+                  <p>+221 33 800 00 00</p>
+                  <p>Lun - Ven : 08h00 - 18h00 (GMT)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carte Google Maps -->
+            <div class="map-wrapper">
+              <h3>Localisation du Sommet</h3>
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.3371948831966!2d-17.18567542490159!3d14.750106285753066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10bb84c56adcd%3A0xb36b5bc93c39d8df!2sCICAD%20-%20Centre%20International%20de%20Conf%C3%A9rences%20Abdou%20Diouf!5e0!3m2!1sfr!2ssn!4v1700000000000!5m2!1sfr!2ssn" 
+                  width="100%" 
+                  height="250" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Carte de localisation du CICAD Dakar">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section FAQ en Accordéon CSS Pur -->
+    <section class="faq-section reveal">
+      <div class="container">
+        <h2 class="section-title">Foire Aux Questions</h2>
+        <p class="section-subtitle">Retrouvez les réponses aux questions les plus fréquemment posées.</p>
+
+        <div class="faq-accordion">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <input type="radio" name="faq-group" id="faq-1" class="faq-toggle">
+            <label for="faq-1" class="faq-header">
+              <span class="faq-question">Quels sont les tarifs d'accès au sommet AfriConnect 2026 ?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow" aria-hidden="true"></i>
+            </label>
+            <div class="faq-body">
+              <div class="faq-content">
+                <p>L'accès Pass Standard est fixé à 50 000 FCFA. Les pass VIP donnant accès aux dîners de gala et salons VIP sont à 150 000 FCFA. Un tarif préférentiel de 15 000 FCFA est proposé aux étudiants sur présentation de leur carte d'étudiant valide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <input type="radio" name="faq-group" id="faq-2" class="faq-toggle">
+            <label for="faq-2" class="faq-header">
+              <span class="faq-question">Le sommet sera-t-il accessible en ligne à distance ?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow" aria-hidden="true"></i>
+            </label>
+            <div class="faq-body">
+              <div class="faq-content">
+                <p>Oui, toutes les sessions plénières et keynotes de l'Auditorium A seront retransmises en streaming HD sur notre plateforme numérique pour les participants munis d'un Pass virtuel en ligne.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <input type="radio" name="faq-group" id="faq-3" class="faq-toggle">
+            <label for="faq-3" class="faq-header">
+              <span class="faq-question">Comment obtenir une lettre d'invitation pour le visa ?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow" aria-hidden="true"></i>
+            </label>
+            <div class="faq-body">
+              <div class="faq-content">
+                <p>Une fois votre formulaire d'inscription validé et votre règlement effectué, un document officiel de confirmation d'inscription vous est adressé automatiquement par e-mail afin de vous appuyer dans vos démarches de visa.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <input type="radio" name="faq-group" id="faq-4" class="faq-toggle">
+            <label for="faq-4" class="faq-header">
+              <span class="faq-question">Des hébergements sont-ils partenaires de l'événement ?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow" aria-hidden="true"></i>
+            </label>
+            <div class="faq-body">
+              <div class="faq-content">
+                <p>Oui, nous avons conclu des partenariats avec plusieurs complexes hôteliers situés à proximité du CICAD (Diamniadio) et à Dakar centre, offrant jusqu'à 25% de réduction aux participants enregistrés.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <input type="radio" name="faq-group" id="faq-5" class="faq-toggle">
+            <label for="faq-5" class="faq-header">
+              <span class="faq-question">Puis-je annuler ou modifier mon billet d'inscription ?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow" aria-hidden="true"></i>
+            </label>
+            <div class="faq-body">
+              <div class="faq-content">
+                <p>Les annulations donnant lieu à un remboursement intégral sont acceptées jusqu'à 15 jours avant le début du sommet. Passé ce délai, les transferts de billets vers un tiers restent possibles sans frais supplémentaires.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> AfriConnect</a>
+          <p class="footer-desc">Le sommet annuel de référence pour l'écosystème numérique africain.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Inscription & Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Suivez-nous</h4>
+          <div class="social-links">
+            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> AfriConnect Summit. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton Retour en haut -->
+  <button id="back-to-top" class="back-to-top" aria-label="Retourner en haut">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

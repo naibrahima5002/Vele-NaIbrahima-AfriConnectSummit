@@ -71,3 +71,47 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* --- 3. ANIMATIONS AU SCROLL (INTERSECTION OBSERVER) --- */
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+  if (animatedElements.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animatedElements.forEach(el => scrollObserver.observe(el));
+  }
+
+
+  /* --- 4. ONGLETS DU PROGRAMME --- */
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  if (tabButtons.length > 0 && tabContents.length > 0) {
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        const activeContent = document.getElementById(targetTab);
+        if (activeContent) {
+          activeContent.classList.add('active');
+        }
+      });
+    });
+  }

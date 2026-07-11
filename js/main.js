@@ -115,3 +115,114 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* --- 5. FILTRAGE DES INTERVENANTS --- */
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const speakerCards = document.querySelectorAll('.speaker-card');
+
+  if (filterButtons.length > 0 && speakerCards.length > 0) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        speakerCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.classList.remove('hide');
+          } else {
+            card.classList.add('hide');
+          }
+        });
+      });
+    });
+  }
+
+
+  /* --- 6. VALIDATION DU FORMULAIRE DE CONTACT / INSCRIPTION --- */
+  const registrationForm = document.getElementById('registration-form');
+
+  if (registrationForm) {
+    registrationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      const inputs = registrationForm.querySelectorAll('input[required], select[required], textarea[required]');
+
+      inputs.forEach(input => {
+        const formGroup = input.closest('.form-group');
+        const errorMsg = formGroup ? formGroup.querySelector('.error-msg') : null;
+
+        if (!input.value.trim()) {
+          setError(formGroup, errorMsg, 'Ce champ est obligatoire.');
+          isValid = false;
+        } else if (input.type === 'email' && !validateEmail(input.value)) {
+          setError(formGroup, errorMsg, 'Veuillez entrer une adresse email valide.');
+          isValid = false;
+        } else if (input.id === 'message' && input.value.trim().length < 20) {
+          setError(formGroup, errorMsg, 'Le message doit contenir au moins 20 caractères.');
+          isValid = false;
+        } else {
+          setSuccess(formGroup, errorMsg);
+        }
+      });
+
+      if (isValid) {
+        const alertSuccess = document.getElementById('form-success-msg');
+        if (alertSuccess) {
+          alertSuccess.style.display = 'flex';
+        }
+        registrationForm.reset();
+
+        setTimeout(() => {
+          inputs.forEach(input => {
+            const formGroup = input.closest('.form-group');
+            if (formGroup) {
+              formGroup.classList.remove('valid');
+            }
+          });
+        }, 3000);
+      }
+    });
+
+    const requiredInputs = registrationForm.querySelectorAll('input[required], select[required], textarea[required]');
+    requiredInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const formGroup = input.closest('.form-group');
+        const errorMsg = formGroup ? formGroup.querySelector('.error-msg') : null;
+
+        if (input.value.trim()) {
+          if (input.type === 'email' && !validateEmail(input.value)) {
+            setError(formGroup, errorMsg, 'Adresse email invalide.');
+          } else if (input.id === 'message' && input.value.trim().length < 20) {
+            setError(formGroup, errorMsg, 'Au moins 20 caractères requis.');
+          } else {
+            setSuccess(formGroup, errorMsg);
+          }
+        } else {
+          setError(formGroup, errorMsg, 'Ce champ est obligatoire.');
+        }
+      });
+    });
+  }
+
+  function setError(group, msgElement, text) {
+    if (!group) return;
+    group.classList.add('invalid');
+    group.classList.remove('valid');
+    if (msgElement) msgElement.textContent = text;
+  }
+
+  function setSuccess(group, msgElement) {
+    if (!group) return;
+    group.classList.remove('invalid');
+    group.classList.add('valid');
+    if (msgElement) msgElement.textContent = '';
+  }
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }

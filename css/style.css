@@ -280,3 +280,215 @@ h1, h2, h3, h4 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- REGLES GLOBALES ET PAGE D'ACCUEIL --- */
+
+/* Normalisation globale de toutes les images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Centrage des titres et textes principaux */
+.hero-content,
+.section-title,
+.section-subtitle,
+.hero-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+/* Alignement de la section compteur / statistiques */
+.countdown-container,
+.hero-stats,
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+/* Alignment en grille de "Pourquoi participer ?" */
+.features-grid,
+.why-attend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Alignement en grille et taille des cartes d'intervenants */
+.speakers-grid,
+.featured-speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+}
+
+/* Uniformisation des images de cartes */
+.speaker-card img,
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* --- CORRECTIONS PAGE ACCUEIL (INDEX.HTML) --- */
+
+/* 1. Normalisation globale de toutes les images pour éviter l'effet géant */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. Centrage complet du Hero (Titre, badge, paragraphe, boutons) */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* 3. Alignement horizontal et centrage du Compte à Rebours */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* 4. Alignement horizontal des Chiffres Clés (Stats) */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+/* 5. Centrage des titres de sections */
+.section-title,
+.section-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 6. Grille pour "Pourquoi Participer" */
+.why-flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.why-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 7. Grille et taille fixe pour les cartes d'intervenants (page d'accueil) */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.speaker-card {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.speaker-image-wrapper {
+  width: 100%;
+  height: 280px; /* Taille fixe identique à la page intervenants */
+  overflow: hidden;
+}
+
+.speaker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recadre proprement l'image sans la déformer */
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* --- CORRECTION SECTION SPONSORS --- */
+
+/* Centrage global de la section sponsors et de ses textes */
+.sponsors-section,
+.sponsors-section .container {
+  text-align: center;
+}
+
+/* Organisation des blocs par niveau de sponsor (Or, Argent, Bronze) */
+.sponsor-tier {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* Titre des catégories (Sponsors Or, etc.) centré */
+.tier-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Alignement en ligne (flexbox) des logos et centrage */
+.sponsors-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Style de base pour un logo/carte de sponsor */
+.sponsor-logo {
+  padding: 0.75rem 1.5rem;
+  background: var(--surface-color, #f4f5f7);
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

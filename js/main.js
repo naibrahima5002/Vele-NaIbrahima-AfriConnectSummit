@@ -253,3 +253,41 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+
+  // Fonction pour animer un compteur de 0 jusqu'à sa valeur target
+function animateCounter(counter) {
+  const target = +counter.getAttribute('data-target');
+  const duration = 2000; // Durée de l'animation en ms (2 secondes)
+  const increment = target / (duration / 16); // ~60 images par seconde
+
+  let current = 0;
+
+  const updateCount = () => {
+    current += increment;
+    if (current < target) {
+      counter.innerText = Math.ceil(current);
+      requestAnimationFrame(updateCount);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  updateCount();
+}
+
+// Observer pour déclencher l'animation uniquement quand la section devient visible à l'écran
+const statsSection = document.querySelector('.stats-section');
+
+if (statsSection) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counters = entry.target.querySelectorAll('.stat-number');
+        counters.forEach(counter => animateCounter(counter));
+        observer.unobserve(entry.target); // Ne joue l'animation qu'une seule fois
+      }
+    });
+  }, { threshold: 0.5 }); // Se déclenche quand 50% de la section est visible
+
+  observer.observe(statsSection);
+}
